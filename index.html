@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>HealthCalcAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #0056b3;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to HealthCalcAI</h1>
-    <p>AI platform for biomedical and health research.</p>
+    <header>
+        <h1>Welcome to HealthCalcAI</h1>
+        <p>AI-powered platform for biomedical & health research</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#app">Mobile App</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About HealthCalcAI</h2>
+            <p>HealthCalcAI empowers researchers to analyze biomedical text and image data, store results securely, and generate automated reports through web or mobile.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Explore our main modules:</p>
+            <a class="btn" href="https://healthcalcai.github.io/Biomedics/" target="_blank">Biomedics AI Platform</a>
+            <br><br>
+            <a class="btn" href="https://healthcalcai.github.io/TextAI/" target="_blank">Text Analysis Module</a>
+            <br><br>
+            <a class="btn" href="https://healthcalcai.github.io/ImageAI/" target="_blank">Image Analysis Module</a>
+        </section>
+
+        <section id="app">
+            <h2>Mobile App</h2>
+            <p>Access HealthCalcAI from your smartphone:</p>
+            <a class="btn" href="#" target="_blank">Download App</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:info@healthcalcai.com">info@healthcalcai.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/healthcalcai" target="_blank">HealthCalcAI</a></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 HealthCalcAI. All rights reserved.
+    </footer>
 </body>
 </html>
