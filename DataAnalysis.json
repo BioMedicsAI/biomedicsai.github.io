@@ -1,0 +1,38 @@
+﻿[
+  {
+    "thumb": "img/tm-img-01-tn.jpg",
+    "full": "img/tm-img-01.jpg",
+    "title": "مزرعه چای",
+    "description": "این مزرعه در شمال کشور قرار دارد و متعلق به یک کشاورز محلی می باشد."
+  },
+  {
+    "thumb": "img/tm-img-02-tn.jpg",
+    "full": "img/tm-img-02.jpg",
+    "title": "عنوان تصویر دوم",
+    "description": "توضیح کوتاه درباره تصویر دوم"
+  },
+  {
+    "thumb": "img/tm-img-03-tn.jpg",
+    "full": "img/tm-img-03.jpg",
+    "title": "عنوان تصویر سوم",
+    "description": "توضیح کوتاه درباره تصویر سوم"
+  },
+  {
+    "thumb": "img/tm-img-04-tn.jpg",
+    "full": "img/tm-img-04.jpg",
+    "title": "عنوان تصویر چهارم",
+    "description": "توضیح کوتاه درباره تصویر چهارم"
+  },
+  {
+    "thumb": "img/tm-img-05-tn.jpg",
+    "full": "img/tm-img-05.jpg",
+    "title": "عنوان تصویر پنجم",
+    "description": "توضیح کوتاه درباره تصویر پنجم"
+  },
+  {
+    "thumb": "img/tm-img-06-tn.jpg",
+    "full": "img/tm-img-06.jpg",
+    "title": "عنوان تصویر ششم",
+    "description": "توضیح کوتاه درباره تصویر ششم"
+  }
+]

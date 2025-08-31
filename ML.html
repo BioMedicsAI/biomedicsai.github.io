@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>یادگیری ماشین | پژوهشیار</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- CSS اختصاصی -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div id="menu-placeholder"></div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Content Section -->
+    <section class="container-content">
+        <div class="section-sub">
+            <h1>یادگیری ماشین</h1>
+            <p>
+                یادگیری ماشین یکی از شاخه‌های کلیدی هوش مصنوعی است که با استفاده از الگوریتم‌ها و مدل‌های محاسباتی،
+                توانایی سیستم‌ها برای یادگیری از داده‌ها و بهبود عملکرد بدون برنامه‌ریزی صریح را فراهم می‌کند.
+            </p>
+            <ul>
+                <li>مدل‌سازی پیش‌بینی و طبقه‌بندی</li>
+                <li>تحلیل داده‌های ژنومی و پروتئومی با ML</li>
+                <li>شبکه‌های عصبی و یادگیری عمیق</li>
+                <li>شناسایی الگوها و خوشه‌بندی</li>
+                <li>بهینه‌سازی و خودکارسازی تحلیل‌ها</li>
+            </ul>
+        </div>
+
+        <div style="margin-top:40px;">
+            <a href="index.html" class="btn-back">بازگشت به صفحه اصلی</a>
+        </div>
+    </section>
+
+    <!-- Order Section (Google Form) -->
+    <section id="order" class="section text-center" style="background:#f0f4f8;">
+        <div class="container">
+            <h2>فرم سفارش خدمات یادگیری ماشین</h2>
+            <p>لطفاً فرم زیر را پر کنید تا تیم ما با شما تماس بگیرد.</p>
+            <div style="margin-top:30px;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGJYFkTKzjdGn0UuyU54lNS-b37YqB7XwkWTuQFLM70K_47g/viewform?embedded=true"
+                        width="100%"
+                        height="800"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0">
+                    در حال بارگذاری…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

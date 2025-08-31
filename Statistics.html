@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحلیل آماری | پژوهشیار</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- CSS اختصاصی -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div id="menu-placeholder"></div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Content Section -->
+    <section class="container-content">
+        <div class="section-sub">
+            <h1>تحلیل آماری</h1>
+            <p>
+                در این بخش خدمات تخصصی تحلیل آماری داده‌ها ارائه می‌شود. تحلیل آماری برای پژوهش‌های علمی، پزشکی و
+                صنعتی ابزاری کلیدی جهت استنتاج نتایج معتبر و قابل اعتماد است.
+            </p>
+            <ul>
+                <li>طراحی و تحلیل آزمون‌های آماری</li>
+                <li>تحلیل رگرسیون و مدل‌های پیش‌بینی</li>
+                <li>تحلیل واریانس (ANOVA)</li>
+                <li>آزمون‌های ناپارامتریک</li>
+                <li>تحلیل چندمتغیره (PCA, Cluster Analysis)</li>
+                <li>تهیه گزارش علمی و نمودارهای تخصصی</li>
+            </ul>
+        </div>
+
+        <div style="margin-top:40px;">
+            <a href="index.html" class="btn-back">بازگشت به صفحه اصلی</a>
+        </div>
+    </section>
+
+    <!-- Order Section (Google Form) -->
+    <section id="order" class="section text-center" style="background:#f0f4f8;">
+        <div class="container">
+            <h2>فرم سفارش خدمات تحلیل آماری</h2>
+            <p>لطفاً فرم زیر را پر کنید تا تیم ما با شما تماس بگیرد.</p>
+            <div style="margin-top:30px;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGJYFkTKzjdGn0UuyU54lNS-b37YqB7XwkWTuQFLM70K_47g/viewform?embedded=true"
+                        width="100%"
+                        height="800"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0">
+                    در حال بارگذاری…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

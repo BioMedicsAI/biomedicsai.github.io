@@ -1,108 +1,590 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>HealthCalcAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پژوهشیار | خدمات بیوانفورماتیک و هوش مصنوعی</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0; padding: 0;
-            background-color: #f8f9fa;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
             color: #333;
+            /* Background gradient برای کل صفحه */
+            #هر رنگ در گرادیانت به ترتیب: #1a237e (آبی تیره علمی)، #1de9b6 (سبز فیروزه‌ای روشن)، #3949ab (آبی متوسط) است. #background: linear-gradient(135deg, #1a237e, #1de9b6, #3949ab);
+            background: linear-gradient(135deg, #3f51b5, #64ffda, #5c6bc0);
+            background-attachment: fixed;
+            direction: rtl;
+            text-align: right;
         }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
+
+        h2, h3 {
+            color: #1a237e;
+            font-weight: 700;
         }
-        nav {
-            background-color: #0056b3;
-            padding: 10px;
-            text-align: center;
+
+        .navbar {
+            background-color: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
+
+        .navbar-nav .nav-link {
+            color: #1a237e;
+            font-weight: 600;
         }
-        nav a:hover {
-            text-decoration: underline;
+
+            .navbar-nav .nav-link:hover {
+                color: #3949ab;
+            }
+
+        .section {
+            padding: 80px 20px;
         }
-        main {
-            padding: 40px;
-            text-align: center;
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255,255,255,0.95); /* کارت‌ها سفید شفاف برای خوانایی */
+            cursor: pointer;
         }
-        section {
-            margin-bottom: 50px;
-        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            }
+
+            .card i {
+                color: #1de9b6;
+                margin-bottom: 15px;
+            }
+
         footer {
-            background-color: #007bff;
-            color: white;
+            background: #1a237e;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+            footer a {
+                color: #1de9b6;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    color: #fff;
+                }
+
+        .text-center {
             text-align: center;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
-        .btn {
-            background-color: #28a745;
-            color: white;
-            padding: 12px 25px;
+
+        .btn-primary {
+            background: #3949ab;
+            border: none;
+            transition: background 0.3s;
+        }
+
+            .btn-primary:hover {
+                background: #1a237e;
+            }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 60px 15px;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* لینک کارت‌ها */
+        a.card-link {
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background-color: #218838;
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to HealthCalcAI</h1>
-        <p>AI-powered platform for biomedical & health research</p>
-    </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#app">Mobile App</a>
-        <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <a class="navbar-brand" href="#"><i class="fa fa-flash"></i> پژوهشیار</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon">&#9776;</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto text-center">
+                <li class="nav-item"><a class="nav-link" href="#home">صفحه اصلی</a></li>
+                <li class="nav-item"><a class="nav-link" href="#datamining">خدمات داده‌کاوی</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bioinformatics">بیوانفورماتیک</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ai">هوش مصنوعی</a></li>
+                <li class="nav-item"><a class="nav-link" href="#packages">پکیج‌ها</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
+                <li class="nav-item"><a class="nav-link"></a></li>
+                <li class="nav-item"><a class="nav-link" href="#collaboration">همکاری با پژوهشیار</a></li>
+            </ul>
+        </div>
     </nav>
+    <!--- welcome-->
+    <section id="home" class="section">
+        <div class="container text-center">
+            <h2>به پژوهشیار خوش آمدید</h2>
+            <p>خدمات پیشرفته بیوانفورماتیک و هوش مصنوعی برای دانشجویان و پژوهشگران</p>
+        </div>
+    </section>
 
-    <main>
-        <section id="about">
-            <h2>About HealthCalcAI</h2>
-            <p>HealthCalcAI empowers researchers to analyze biomedical text and image data, store results securely, and generate automated reports through web or mobile.</p>
-        </section>
+    <!-- Home Section -->
+    <section id="datamining" class="section">
+        <div class="container text-center">
+            <h2>خدمات داده‌کاوی</h2>
+            <p>جستجو، جمع‌آوری و پردازش داده‌ها برای استخراج الگوهای علمی و کاربردی</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <a href="DataAnalysis.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-flask fa-3x"></i>
+                            <h3>تحلیل داده‌ها</h3>
+                            <p>داده‌کاوی و پیش‌پردازش داده‌های ژنومی و پروتئومی با الگوریتم‌های پیشرفته.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="Visualization.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-database fa-3x"></i>
+                            <h3>مصورسازی</h3>
+                            <p>گزارش‌ها و نمودارهای استاندارد برای پایان‌نامه و مقاله، آماده پرزنتیشن.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="ResearchSupp.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-line-chart fa-3x"></i>
+                            <h3>پشتیبانی پژوهشی</h3>
+                            <p>مشاوره و راهنمایی برای انجام پروژه‌ها و تحلیل داده‌ها به صورت علمی.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <a href="DataCollection.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-search fa-3x"></i>
+                            <h3>جمع‌آوری و پیش‌پردازش داده‌ها</h3>
+                            <p>
+                                جستجو و تهیه داده‌ها از پایگاه‌های معتبر (NCBI, KEGG, Reactome, TCGA, GEO, UniProt و …)
+                                و پیش‌پردازش شامل پاکسازی، نرمال‌سازی و حذف داده‌های ناقص یا نویزی
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <a href="DataCategorization.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-file-excel-o fa-3x"></i>
+                            <h3>دسته‌بندی داده‌ها</h3>
+                            <p>دسته‌بندی موضوعی داده‌ها در قالب فایل Excel یا Access جهت سهولت استفاده پژوهشگر</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Explore our main modules:</p>
-            <a class="btn" href="https://healthcalcai.github.io/Biomedics/" target="_blank">Biomedics AI Platform</a>
-            <br><br>
-            <a class="btn" href="https://healthcalcai.github.io/TextAI/" target="_blank">Text Analysis Module</a>
-            <br><br>
-            <a class="btn" href="https://healthcalcai.github.io/ImageAI/" target="_blank">Image Analysis Module</a>
-        </section>
+    <!-- Bioinformatics Section -->
+    <section id="bioinformatics" class="section">
+        <div class="container text-center">
+            <h2>خدمات بیوانفورماتیک</h2>
+            <p>تحلیل ژنومی، RNA-Seq، پروتئومیکس و مسیرهای زیستی با ابزارهای معتبر</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <a href="Genomic.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-dna fa-3x"></i>
+                            <h3>تحلیل ژنومی</h3>
+                            <p>شناسایی ژن‌های بیماری‌زا و بررسی بیان ژن‌ها با داده‌های NGS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="RNASeq.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-flask fa-3x"></i>
+                            <h3>RNA-Seq و مسیرها</h3>
+                            <p>تحلیل بیان ژن و مسیرهای زیستی با KEGG و Reactome</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="Proteomics.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-cogs fa-3x"></i>
+                            <h3>پروتئومیکس</h3>
+                            <p>تحلیل پروتئین‌ها و پیش‌بینی ساختار و داکینگ مولکولی</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="app">
-            <h2>Mobile App</h2>
-            <p>Access HealthCalcAI from your smartphone:</p>
-            <a class="btn" href="#" target="_blank">Download App</a>
-        </section>
+    <!-- AI Section -->
+    <section id="ai" class="section text-center">
+        <div class="container">
+            <h2>خدمات هوش مصنوعی</h2>
+            <p>استفاده از یادگیری ماشین برای طبقه‌بندی و پیش‌بینی پاسخ درمان</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <a href="ML.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-robot fa-3x"></i>
+                            <h3>یادگیری ماشین</h3>
+                            <p>مدل‌های پیش‌بینی و طبقه‌بندی نمونه‌ها و بیماران با الگوریتم‌های پیشرفته</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="Statistics.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-bar-chart fa-3x"></i>
+                            <h3>تحلیل آماری</h3>
+                            <p>تحلیل داده‌های کلینیکی و ژنومی با روش‌های آماری دقیق</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="DataVis.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-pie-chart fa-3x"></i>
+                            <h3>مصورسازی داده‌ها</h3>
+                            <p>نمودارهای Heatmap، Volcano، PCA و شبکه‌های ژنی و پروتئینی</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:info@healthcalcai.com">info@healthcalcai.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/healthcalcai" target="_blank">HealthCalcAI</a></p>
-        </section>
-    </main>
+    <!-- Packages Section -->
+    <section id="packages" class="section">
+        <div class="container text-center">
+            <h2>پکیج‌های خدمات</h2>
+            <p>پکیج‌های ساده، متوسط و پیشرفته برای پایان‌نامه و پروژه‌های پژوهشی</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <a href="page10.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-cubes fa-3x"></i>
+                            <h3>ساده</h3>
+                            <p>تحلیل پایه داده‌ها و نمودارهای ابتدایی، مناسب پروژه‌های کوتاه</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="page11.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-layer-group fa-3x"></i>
+                            <h3>متوسط</h3>
+                            <p>تحلیل پیشرفته داده‌ها و نمودارهای چندلایه، مناسب پایان‌نامه ارشد</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="page12.html" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-star fa-3x"></i>
+                            <h3>پیشرفته</h3>
+                            <p>تحلیل کامل داده‌ها، گزارش حرفه‌ای و مصورسازی کامل، مناسب پایان‌نامه دکترا</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        &copy; 2025 HealthCalcAI. All rights reserved.
-    </footer>
+    <!-- Collaboration Section -->
+    <section id="collaboration" class="section text-center" style="background:#f0f4f8;">
+        <div class="container">
+            <h2>همکاری با ما</h2>
+            <p>اگر می‌خواهید بخشی از تیم پژوهشیار باشید و به توسعه پژوهش‌های پیشرفته کمک کنید، می‌توانید به یکی از دسته‌های زیر بپیوندید:</p>
+
+            <div class="row mt-5">
+
+                <!-- اساتید -->
+                <div class="col-md-4 mb-4">
+                    <a href="collaboration.html?role=professor" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-user-tie fa-3x"></i>
+                            <h3>اساتید با تخصص مرتبط</h3>
+                            <p>ارائه مشاوره علمی، راهنمایی پروژه‌ها، توسعه الگوریتم‌ها و نظارت بر تیم پژوهشی.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- متخصصان -->
+                <div class="col-md-4 mb-4">
+                    <a href="collaboration.html?role=expert" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-user-cog fa-3x"></i>
+                            <h3>متخصصان تحلیل داده و بیوانفورماتیک</h3>
+                            <p>همکاری در پیش‌پردازش داده‌ها، تحلیل ژنومی و پروتئومیکس و توسعه مدل‌های یادگیری ماشین.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- کارآموزان و دانشجویان -->
+                <div class="col-md-4 mb-4">
+                    <a href="collaboration.html?role=student" class="card-link">
+                        <div class="card p-4">
+                            <i class="fa fa-user-graduate fa-3x"></i>
+                            <h3>کارآموزان و دانشجویان</h3>
+                            <p>یادگیری مهارت‌های عملی، مشارکت در پروژه‌ها و کمک به مصورسازی و گزارش‌دهی داده‌ها.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Hover Effect -->
+    <section id="about" class="section" style="background: linear-gradient(135deg, #3f51b5, #64ffda, #5c6bc0);">
+        <div class="container text-center">
+            <h2>درباره ما</h2>
+            <p>تیم پژوهشیار متشکل از متخصصان داده‌کاوی، بیوانفورماتیک و هوش مصنوعی است که داده‌ها را به نتایج کاربردی تبدیل می‌کنند.</p>
+
+            <div class="row mt-5 justify-content-center">
+
+                <!-- رضا غفاری -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="team-card">
+                        <img src="images/reza.jpg" alt="رضا غفاری">
+                        <div class="team-info">
+                            <h4>رضا غفاری</h4>
+                            <h5> سرپرست تیم بیوانفورماتیک و هوش مصنوعی</h5>
+                            <p>
+                                کارشناسی علوم سلولی-ملکولی <br/>
+                                کارشناسی ارشد نرم‌افزار، <br/>
+                                دانشجوی دکترای هوش مصنوعی در علوم پزشکی
+                            </p>
+                        </div>
+                        <div class="team-icon">
+                            <i class="fa fa-lightbulb fa-2x"></i>
+                            <h4>گروه بیوانفورماتیک و هوش مصنوعی</h4>
+                            <div class="team-count">3+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- سعیده خطیبی‌راد -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="team-card">
+                        <img src="images/saeedeh.jpg" alt="سعیده خطیبی‌راد">
+                        <div class="team-info">
+                            <h4>سعیده خطیبی‌راد</h4>
+                            <h5>سرپرست تیم تحلیل و توسعه برنامه‌نویسی</h5>
+                            <p>
+                                دکترای مهندسی هوافضا  <br />
+                                و رتبه ۲۰ کنکور دکترای هوش مصنوعی 1404
+                            </p>
+                        </div>
+                        <div class="team-icon">
+                            <i class="fa fa-code fa-2x"></i>
+                            <h4>گروه توسعه و برنامه‌نویسی</h4>
+                            <div class="team-count">5+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مینا لشکربلوکی -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="team-card">
+                        <img src="images/mina.jpg" alt="مینا لشکربلوکی">
+                        <div class="team-info">
+                            <h4>مینا لشکربلوکی</h4>
+                            <h5>سرپرست تیم تحلیل و صحت‌سنجی داده‌ها</h5>
+                            <p>
+                                دکترای ژنتیک مولکولی از دانشگاه تربیت مدرس
+                            </p>
+                        </div>
+                        <div class="team-icon">
+                            <i class="fa fa-database fa-2x"></i>
+                            <h4>گروه تحلیل و صحت‌سنجی داده‌ها</h4>
+                            <div class="team-count">4+</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <style>
+        .team-card {
+            position: relative;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .team-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity 0.3s;
+                z-index: 2;
+            }
+
+            .team-card .team-info {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 20px;
+                color: #fff;
+                background: rgba(26,35,126,0.9);
+                opacity: 0;
+                transition: opacity 0.3s;
+                z-index: 3;
+                text-align: right;
+            }
+
+            .team-card .team-icon {
+                position: relative;
+                z-index: 1;
+                color: #1de9b6;
+                transition: transform 0.3s;
+            }
+
+            .team-card:hover {
+                transform: translateY(-5px);
+            }
+
+                .team-card:hover img,
+                .team-card:hover .team-info {
+                    opacity: 1;
+                }
+
+            .team-card h4 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
+
+            .team-card p {
+                margin: 0;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+        .team-count {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff4081;
+            margin-top: 10px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .team-card:hover .team-count {
+            transform: scale(1.2);
+            color: #ff1744;
+        }
+        .team-icon h4 {
+            color: #000; /* مشکی */
+        }
+
+    </style>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background:#f0f4f8;">
+        <div class="container text-center">
+            <h2>تماس با ما</h2>
+            <p>برای ارتباط با تیم پژوهشیار می‌توانید از روش‌های زیر استفاده کنید:</p>
+
+            <div class="row mt-4 justify-content-center">
+
+                <!-- ایمیل -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fa fa-envelope fa-2x mb-2" style="color:#1de9b6;"></i>
+                        <h4>ایمیل</h4>
+                        <p><a href="mailto:AI.Biomedics@gmail.com">AI.Biomedics@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <!-- موبایل -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fa fa-phone fa-2x mb-2" style="color:#1de9b6;"></i>
+                        <h4>موبایل</h4>
+                        <p><a href="tel:+989375910906">09375910906</a></p>
+                    </div>
+                </div>
+
+                <!-- تلگرام -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fab fa-telegram fa-2x mb-2" style="color:#1de9b6;"></i>
+                        <h4>تلگرام</h4>
+                        <p><a href="https://t.me/AIBioMedics" target="_blank">AIBioMedics@</a></p>
+                    </div>
+                </div>
+
+                <!-- واتساپ -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fab fa-whatsapp fa-2x mb-2" style="color:#1de9b6;"></i>
+                        <h4>واتساپ</h4>
+                        <p><a href="https://wa.me/989375910906" target="_blank">09375910906</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

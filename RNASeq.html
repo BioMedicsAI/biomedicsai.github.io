@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNA-Seq و تحلیل مسیرها | پژوهشیار</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- CSS اختصاصی -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div id="menu-placeholder"></div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Content Section -->
+    <section class="container-content">
+        <div class="section-sub">
+            <h1>تحلیل RNA-Seq</h1>
+            <p>
+                RNA-Seq ابزاری قدرتمند برای مطالعه بیان ژن‌ها در سطح ترنسکریپتوم است.
+                با استفاده از این روش، می‌توان ژن‌های دیفرانسیل بیان شده (DEGs) را شناسایی کرد و به درک عمیق‌تری از فعالیت سلولی رسید.
+            </p>
+            <ul>
+                <li>پیش‌پردازش داده‌های خام RNA-Seq</li>
+                <li>شناسایی ژن‌های دیفرانسیل بیان شده</li>
+                <li>تولید نمودارهای volcano و heatmap</li>
+                <li>تفسیر نتایج در قالب گزارش علمی</li>
+            </ul>
+        </div>
+
+        <div class="section-sub">
+            <h2>تحلیل مسیرها (Pathway Analysis)</h2>
+            <p>
+                پس از شناسایی ژن‌های تغییر یافته، با تحلیل مسیرها می‌توان فهمید کدام مسیرهای زیستی تحت تأثیر قرار گرفته‌اند.
+                این مرحله برای درک مکانیسم‌های مولکولی و طراحی پژوهش‌های کاربردی ضروری است.
+            </p>
+            <ul>
+                <li>تحلیل مسیرهای KEGG و Reactome</li>
+                <li>شبکه‌سازی پروتئین‌ها و ژن‌ها</li>
+                <li>شناسایی مسیرهای کلیدی در بیماری‌ها</li>
+                <li>تولید گزارش نهایی برای انتشار مقاله</li>
+            </ul>
+        </div>
+
+        <div style="margin-top:40px;">
+            <a href="index.html" class="btn-back">بازگشت به صفحه اصلی</a>
+        </div>
+    </section>
+
+    <!-- Order Section (Google Form) -->
+    <section id="order" class="section text-center" style="background:#f0f4f8;">
+        <div class="container">
+            <h2>فرم سفارش خدمات RNA-Seq و تحلیل مسیرها</h2>
+            <p>لطفاً فرم زیر را پر کنید تا تیم ما با شما تماس بگیرد.</p>
+            <div style="margin-top:30px;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGJYFkTKzjdGn0UuyU54lNS-b37YqB7XwkWTuQFLM70K_47g/viewform?embedded=true"
+                        width="100%"
+                        height="800"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0">
+                    در حال بارگذاری…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
